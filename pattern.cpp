@@ -39,6 +39,22 @@ int tab(string &s)
     }
     return dp[0];
 }
+void printPattern(int n)
+{
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            if(i==1 or i==n)
+                cout<<"*";
+            else if(j==1 or j==n or j==i or j==n-i+1)
+                cout<<"*";
+            else   
+                cout<<" ";
+        }
+        cout<<endl;
+    }
+}
 int main()
 {
     /*int n=5;
@@ -55,9 +71,10 @@ int main()
                 cout<<" ";
         }
         cout<<endl;
-    }   */
+    }   
     string s="naikaj";
-    cout<<tab(s)-1;
+    cout<<tab(s)-1;*/
+    printPattern(5);
     
     return 0;
 }
