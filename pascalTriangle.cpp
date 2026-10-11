@@ -1,37 +1,38 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Solution{
+class Solution
+{
 
-    public:
+public:
     void printPascalTriangle(int rows)
     {
-        for(int i=1;i<=rows;i++)
+        for (int i = 1; i <= rows; i++)
         {
-            int num=i-1,den=1;
-            int res=1;
-            for(int j=1;j<=rows;j++)
+            int num = i - 1, den = 1;
+            int res = 1;
+            for (int j = 1; j <= rows; j++)
             {
-                if(j>=rows-i+1 and j<=rows+i-1)
+                if (j >= rows - i + 1 and j <= rows + i - 1)
                 {
-                    cout<<res<<" ";
-                    res=(res*num)/den;
+                    cout << res << " ";
+                    res = (res * num) / den;
                     num--;
                     den++;
                 }
-                else    
-                    cout<<" ";
+                else
+                    cout << " ";
             }
-            cout<<endl;
+            cout << endl;
         }
     }
 };
 int main()
 {
     Solution obj;
-    int input=0;
-    cout<<"Enter number of Rows..\n";
-    cin>>input;
+    int input = 0;
+    cout << "Enter number of Rows..\n";
+    cin >> input;
     obj.printPascalTriangle(input);
     return 0;
 }
