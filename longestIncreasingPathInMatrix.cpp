@@ -16,7 +16,7 @@ class Solution
         for (int l = 0; l < 4; l++)
         {
             int row = i + dir1[l];
-            int col = j + dir2[i];
+            int col = j + dir2[l];
             if (row >= 0 and row < mat.size() and col >= 0 and col < mat[0].size() and currentCellValue < mat[row][col])
                 res = max(res, 1 + solve(mat, row, col, dp));
         }
@@ -35,7 +35,7 @@ class Solution
         for (int i = 0; i < mat.size(); i++)
             for (int j = 0; j < mat[i].size(); j++)
                 ans = max(ans, solve(mat, i, j, dp));
-        return ans;
+        return ans+1;
     }
 };
 
