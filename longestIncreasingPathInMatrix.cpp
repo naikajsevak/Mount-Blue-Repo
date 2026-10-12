@@ -22,19 +22,35 @@ class Solution
         }
         return dp[i][j] = res;
     }
-    /*int tab(vector<vector<int>> &mat,int i,int j)
+    int tab(vector<vector<int>> &mat,int i,int j)
     {
         
-    }*/
+    }
+    void print(vector<vector<int>> &dp)
+    {
+        for (int i = 0; i < dp.size(); i++)
+        {
+            for (int j = 0; j < dp[i].size(); j++)
+            {
+                cout << dp[i][j] << " ";
+            }
+            cout << endl;
+        }
+    }
     public:
-    int findMaxIncPathInGrid(vector<vector<int>> &mat)
+    int findLongestIncPathInGrid(vector<vector<int>> &mat)
     {
         vector<vector<int>> dp(mat.size(), vector<int>(mat[0].size(), -1));
         int ans = 0;
 
         for (int i = 0; i < mat.size(); i++)
+        {
             for (int j = 0; j < mat[i].size(); j++)
+            {
+                print(dp);
                 ans = max(ans, solve(mat, i, j, dp));
+            }
+        }
         return ans+1;
     }
 };
@@ -43,6 +59,6 @@ int main()
 {
     vector<vector<int>> mat={{1,2},{4,3}};
     Solution obj;
-    cout<<obj.findMaxIncPathInGrid(mat);
+    cout<<obj.findLongestIncPathInGrid(mat);
     return 0;
 }
